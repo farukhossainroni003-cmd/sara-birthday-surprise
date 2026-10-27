@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#190d2b">
+<title>Happy Birthday Sara 💖</title>
+<style>
+:root{--pink:#ff72b6;--gold:#ffd98a}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow-x:hidden;color:#fff;font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;background:radial-gradient(circle at 20% 15%,#54225f 0,transparent 34%),radial-gradient(circle at 85% 80%,#36205e 0,transparent 36%),linear-gradient(145deg,#10091d,#241039 60%,#130b25);display:grid;place-items:center;padding:24px}
+.glow{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 25%,#080411a8 100%)}
+.card{width:min(100%,520px);position:relative;text-align:center;padding:34px 24px 30px;border:1px solid #ffffff28;border-radius:28px;background:#ffffff0d;backdrop-filter:blur(10px);box-shadow:0 20px 70px #0005}
+.badge{display:inline-block;color:#ffe3f1;border:1px solid #ff9bc94d;border-radius:999px;padding:7px 14px;font-size:.82rem;letter-spacing:.06em}
+.cake{font-size:76px;margin:22px 0 8px;filter:drop-shadow(0 0 22px #ff70b566);animation:bob 2.5s ease-in-out infinite}
+h1{font-size:clamp(2rem,9vw,3rem);line-height:1.15;margin:8px 0 12px;background:linear-gradient(90deg,#fff,#ffacd4,#ffe8a7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:#f5dff5;line-height:1.65}
+button{margin-top:22px;border:0;border-radius:999px;padding:14px 22px;font-size:1rem;font-weight:750;color:#32112c;background:linear-gradient(100deg,#ff9bc9,#ffe0a0);box-shadow:0 8px 28px #ff72b64d;cursor:pointer}
+button:active{transform:scale(.98)}
+.message{display:none;margin-top:24px;padding:22px 17px;border-radius:20px;background:#ffffff10;border:1px solid #ffffff24;line-height:1.9;animation:rise .8s ease both}
+.message.show{display:block}
+.wish{font-size:1.12rem;color:#fff4fb}
+.from{margin-top:14px;color:var(--gold);font-weight:700}
+.small{margin-top:18px;font-size:.8rem;color:#cdbbd9}
+.heart{position:fixed;bottom:-35px;opacity:0;pointer-events:none;animation:floatUp 7s linear infinite}
+.confetti{position:fixed;top:-15px;width:9px;height:13px;pointer-events:none;animation:fall 3.5s linear forwards}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes floatUp{0%{transform:translateY(0) rotate(0);opacity:0}12%{opacity:.8}100%{transform:translateY(-115vh) rotate(30deg);opacity:0}}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.1}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<main class="card">
+  <div class="badge">✨ A LITTLE SURPRISE FOR YOU ✨</div>
+  <div class="cake" aria-hidden="true">🎂</div>
+  <h1>Happy Birthday,<br>Sara! 💖</h1>
+  <p class="sub">তোমার জন্য ছোট্ট একটা সারপ্রাইজ আছে…<br>প্রস্তুত তো? 🥰</p>
+  <button id="reveal" type="button">Open Your Surprise 🎁</button>
+  <section class="message" id="message" aria-live="polite">
+    <div style="font-size:2rem">🎉 💗 🎉</div>
+    <p class="wish">শুভ জন্মদিন! 🎂❤️ তোমার জীবনের প্রতিটি দিন আনন্দ, ভালোবাসা আর হাসিতে ভরে উঠুক। তুমি সবসময় স্পেশাল থেকো! 🥰✨</p>
+    <div class="from">With love, Roni ❤️</div>
+  </section>
+  <div class="small">Made with love, just for Sara 🌷</div>
+</main>
+<script>
+const hearts=['💗','💖','💕','✨','💝','🌸'];
+for(let i=0;i<15;i++){const h=document.createElement('span');h.className='heart';h.textContent=hearts[i%hearts.length];h.style.left=(Math.random()*100)+'%';h.style.animationDelay=(Math.random()*7)+'s';h.style.fontSize=(16+Math.random()*22)+'px';document.body.appendChild(h)}
+function burst(){for(let i=0;i<90;i++){const c=document.createElement('i');c.className='confetti';c.style.left=Math.random()*100+'%';c.style.background=['#ff72b6','#ffd98a','#a78bfa','#ffffff','#70e1d1'][i%5];c.style.animationDelay=(Math.random()*.8)+'s';c.style.transform='rotate('+Math.random()*360+'deg)';document.body.appendChild(c);setTimeout(()=>c.remove(),4500)}}
+document.getElementById('reveal').addEventListener('click',()=>{document.getElementById('message').classList.add('show');document.getElementById('reveal').textContent='Surprise Opened! 💖';burst()});
+</script>
+</body>
+</html>
